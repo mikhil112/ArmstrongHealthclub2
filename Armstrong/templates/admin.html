@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shape Multi purpose HTML5 Website Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://webthemez.com" />
+<!-- css --> 
+
+ 
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='materialize/css/materialize.min.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/fancybox/jquery.fancybox.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/flexslider.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+      .col-md-4 {
+        width: 100% !important;
+  }
+    h1, h2 {
+    text-align: center !important;
+    font-weight: 500 !important;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    float: right !important;
+
+}
+menuItem .menu {
+
+    font-size: 15px  !important;
+    font-weight: 500  !important;
+    color: #ec4141  !important;
+
+}
+      select {
+        display:block  !important;
+        width: 50%  !important;
+        padding:0  !important; 
+        margin-top: -20px;
+
+}
+</style>
+
+</head>
+<body>
+<div id="wrapper"> 
+  <!-- start header -->
+    <header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><i class="icon-info-blocks material-icons">Armstrong</i>Health Club</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                       <li class="active"><a class="waves-effect waves-dark" href="/preg">New Player</a></li>
+                       <li><a class="waves-effect waves-dark" href="/treg">New Trainer</a></li>
+                       <li><a class="waves-effect waves-dark" href="/find">List</a></li>
+                       <li><a href="/ppay" class="waves-effect waves-dark"> Bill Payment</a></li>
+                       <li><a class="waves-effect waves-dark" href="/vaddnoti">Notification</a></li>
+                       <li><a class="waves-effect waves-dark" href="/">LogOut</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+  </header><!-- end header -->
+  <section id="inner-headline">
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="pageTitle">Player Registration</h2>
+      </div>
+    </div>
+  </div>
+  </section>
+  <section id="content">
+<section id="pricing">
+        <div class="container">
+           <div class="row"> 
+              <div class="col-md-12">
+               
+              </div>
+            </div>
+            <div class="row"> 
+
+            <div class="col-md-4 menuItem">     
+                            
+            </div>
+            <div class="col-md-4 menuItem">  
+                <ul class="menu">
+                    <li>
+                      <body> <div class=""> <h2>Player Registration</h2>
+                 
+<!--form action="/playerreg" method="post" enctype="multipart/form-data" name="form1" id="form1"-->
+                      <form method="post" onsubmit="return Validate();" action="/playerreg" >
+<table width="1064" border="0">
+  <tr>
+    <td width="332"><div align="right"><strong>NAME:</strong></div></td>
+     <td width="288"><label for="textfield"></label>
+      <input type="text" name="textfield" placeholder="Name" id="textfield" /> 
+    </td>
+    
+    <td width="430">&nbsp;</td>
+  </tr> 
+  
+  <tr>
+    <td height="52"><div align="right"><strong>ADDRESS:</strong></div></td>
+    <td><label for="textarea"></label>
+      <textarea name="textarea" placeholder="Your Address" id="textarea" cols="45" rows="5"  ></textarea></td>
+  </tr>
+
+   <tr>
+    <td height="48"><div align="right"><strong>SEX:</strong></div></td>
+    <td><p>
+      <input type="radio" name="radio" id="radio0" value="Male" />
+      <label for="radio0"> Male</label>
+        <input type="radio" name="radio" id="radio1" value="Female" />
+      <label for="radio1"> Female</label>
+      <br />
+      </p></td>
+  </tr>
+   
+  <tr>
+    <td><div align="right"><strong>DOB:</strong></div></td>
+    <td><label for="textfield"></label>
+      <input type="date" name="textfield1" placeholder="DateOfBirth" id="textfield1"
+       /></td>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>EMAIL:</strong></div></td>
+    <td><label for="textfield3"></label>
+      <input type="text"  onblur="validateEmail(this);" name="textfield2" placeholder="Email" id="textfield2" /></td>
+  </tr>
+      <tr>
+    <td><div align="right"><strong>PASSWORD:</strong></div></td>
+    <td><label for="textfield3"></label>
+      <input type="password" name="textfield3" placeholder="Password" id="textfield3" /></td>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>PHONE :</strong></div></td>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" placeholder="PhoneNumber" id="textfield4" /></td>
+  </tr>
+    <tr>
+    <td height="48"><div align="right"><strong>COURSE:</strong></div></td>
+    <td><p>
+      <input type="checkbox" name="checkbox" id="checkbox2" value="Gym"/>
+      <label for="checkbox2">GYM</label>
+      <label for="checkbox"></label>
+      <input type="checkbox" name="checkbox" id="checkbox" value="Zoomba" />
+      <label for="checkbox">ZOOMBA</label>
+      <input type="checkbox" name="checkbox" id="checkbox3" value="Yoga" />
+      <label for="checkbox3">YOGA</label>
+    </p></td>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>HEIGHT:</strong></div></td>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" placeholder="Height" id="textfield5" /></td>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>WEIGHT:</strong></div></td>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" placeholder="Weight" id="textfield6" /></td>
+  </tr>
+<tr>
+    <td><div align="right"><strong>BLOOD GROOP:</strong></div></td>
+    <td><label for="select"></label>
+      <select name="select" id="select">
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>0-</option>
+      </select></td>
+</tr>
+  <tr>
+    <td><div align="right"><strong>BLOOD PRESS:</strong></div></td>
+    <td><label for="textfield7"></label>
+      <input type="text" name="textfield7" placeholder="BloodPressure" id="textfield7" /></td>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>CHOLESTEROLE:</strong></div></td>
+    <td><label for="textfield8"></label>
+      <input type="text" name="textfield8" placeholder="CholesteroleRate" id="textfield8" /></td>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>REG FEE:</strong></div></td>
+    <td><label for="textfield9"></label>
+      <input type="text" name="textfield9" placeholder="RegistrationFee" id="textfield9" /></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <button id="BtnSubmit" class="btn bg-themeprimary" name="BtnSubmit" type="submit">
+                  Save
+                </button>   
+    </div>      <div align="right"></div></td>
+  </tr>
+  </table>
+</form>
+
+         
+                </ul>
+            </div>
+      </div>
+        </div>
+    </section>
+  </section>
+
+  </div>
+  <div id="sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="copyright">
+            <p>
+              <span>&copy; Bootstrap Template 2018 All right reserved. Template By </span><a href="https://webthemez.com/sports-fitness/" target="_blank">WebThemez</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <ul class="social-network">
+            <li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+            <li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+</div>
+<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="static/js/jquery.js"></script>
+<script src="static/js/jquery.easing.1.3.js"></script>
+<script src="static/materialize/js/materialize.min.js"></script>
+<script src="static/static/js/bootstrap.min.js"></script>
+<script src="static/js/jquery.fancybox.pack.js"></script>
+<script src="static/js/jquery.fancybox-media.js"></script>  
+<script src="static/js/jquery.flexslider.js"></script>
+<script src="static/js/animate.js"></script>
+<!-- Vendor Scripts -->
+<script src="static/js/modernizr.custom.js"></script>
+<script src="static/js/jquery.isotope.min.js"></script>
+<script src="static/js/jquery.magnific-popup.min.js"></script>
+<script src="static/js/animate.js"></script> 
+<script src="static/js/custom.js"></script>t>
+<script type="text/javascript">
+  function Validate() {
+  
+              var name = $('#textfield').val();
+              var addr = $('#textarea').val();
+              var dob = $('#textfield1').val();
+              var email = $('#textfield2').val();
+              var pswd = $('#textfield3').val();
+              var phn = $('#textfield4').val();
+              var hgt = $('#textfield5').val();
+              var wgt = $('#textfield6').val();
+              var bp = $('#textfield7').val();
+              var clst = $('#textfield8').val();
+              var reg = $('#textfield9').val();
+
+              
+              if (name == null || name == ""){
+                alert('Please Enter Name !');
+                return false;
+              }
+              if (addr == null || addr == ""){
+                alert('Please Enter Address !');
+                return false;
+              }
+              if($('[name="radio"]:checked').length == 0){
+                alert('Please Select Gender !');
+                return false;
+              }
+              if (dob == null || dob == ""){
+                alert('Please Enter Date Of Birth !');
+                return false;
+              }
+              if (email == null || email == ""){
+                alert('Please Enter Email !');
+                return false;
+              }
+
+              if (pswd == null || pswd == ""){
+                alert('Please Enter PassWord !');
+                return false;
+              }
+              if (phn == null || phn == ""){
+                alert('Please Enter Phone Number !');
+                return false;
+              }
+              if($('[name="checkbox"]:checked').length == 0){
+                alert('Please Select Course !');
+                return false;
+              }
+              if (hgt == null || hgt == ""){
+                alert('Please Enter Height !');
+                return false;
+              }
+              if (wgt == null || wgt == ""){
+                alert('Please Enter Weight !');
+                return false;
+              }
+              if (bp == null || bp == ""){
+                alert('Please Enter Blood Pressure !');
+                return false;
+              }
+              if (clst == null || clst == ""){
+                alert('Please Enter CholesteroleRate !');
+                return false;
+              }
+              if (reg == null || reg == ""){
+                alert('Please Enter Registration Fee !');
+                return false;
+              }
+
+              return true;
+        }
+        function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+
+        return true;
+
+}
+</script>t>
+</body>
+</html>
